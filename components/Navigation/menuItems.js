@@ -12,5 +12,12 @@ export default [{
         subMenu: [],
         role: ['admin', 'user']
     },
+    {
+        header: 'Details',
+        path: 'details',
+        icon: 'user',
+        subMenu: [],
+        role: ['admin', 'user']
+    },
 
 ]

@@ -115,21 +115,10 @@ export default {
   },
 	methods:{
 		login(){
-      this.loading = true
-      if(this.email == 'human@email.com' && this.password == 'Human@123') {
-         this.loading = false
-        this.$toast.success('Login Successfull',{
-          position: 'top-right'
-        })
-        this.$router.push({
-          path: '/'
-        })
-      } else {
-        this.loading = false
-        this.$toast.error('Some error occured',{
-          position: 'top-right'
-        })
-      }
+      this.$axios.$get(`https://ortigan-e-shop.herokuapp.com/admin/allusers`)
+      .then((response)=>{
+       this.all_users=response             
+      },) 
     }
 	}
 }
